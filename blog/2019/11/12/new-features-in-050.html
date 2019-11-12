@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>New Features in Liquibase Linter 0.5.0 · Liquibase Linter</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Liquibase Linter [0.5.0 is released](https://github.com/whiteclarkegroup/liquibase-linter/releases/tag/0.5.0) and available now [in Maven Central](https://search.maven.org/artifact/com.whiteclarkegroup/liquibase-linter/0.5.0/jar)!"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="New Features in Liquibase Linter 0.5.0 · Liquibase Linter"/><meta property="og:type" content="website"/><meta property="og:url" content="https://whiteclarkegroup.github.io/liquibase-linter/blog/2019/11/12/new-features-in-050"/><meta property="og:description" content="Liquibase Linter [0.5.0 is released](https://github.com/whiteclarkegroup/liquibase-linter/releases/tag/0.5.0) and available now [in Maven Central](https://search.maven.org/artifact/com.whiteclarkegroup/liquibase-linter/0.5.0/jar)!"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/liquibase-linter/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css"/><link rel="alternate" type="application/atom+xml" href="https://whiteclarkegroup.github.io/liquibase-linter/blog/atom.xml" title="Liquibase Linter Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://whiteclarkegroup.github.io/liquibase-linter/blog/feed.xml" title="Liquibase Linter Blog RSS Feed"/><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato"/><script type="text/javascript" src="//buttons.github.io/buttons.js"></script><script src="/liquibase-linter/js/scrollSpy.js"></script><link rel="stylesheet" href="/liquibase-linter/css/main.css"/><script src="/liquibase-linter/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liquibase-linter/"><h2 class="headerTitle">Liquibase Linter</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/liquibase-linter/docs/install" target="_self">Setup</a></li><li class=""><a href="/liquibase-linter/docs/rules/" target="_self">Rules</a></li><li class="siteNavGroupActive"><a href="/liquibase-linter/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/whiteclarkegroup/liquibase-linter" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/liquibase-linter/blog/2019/11/12/new-features-in-050">New Features in Liquibase Linter 0.5.0</a></li><li class="navListItem"><a class="navItem" href="/liquibase-linter/blog/2019/06/21/new-features-in-040">New Features in Liquibase Linter 0.4.0</a></li><li class="navListItem"><a class="navItem" href="/liquibase-linter/blog/2018/11/30/new-features-in-030">New Features in Liquibase Linter 0.3.0</a></li><li class="navListItem"><a class="navItem" href="/liquibase-linter/blog/2018/09/10/introducing-liquibase-linter">Introducing Liquibase Linter</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liquibase-linter/blog/2019/11/12/new-features-in-050">New Features in Liquibase Linter 0.5.0</a></h1><p class="post-meta">November 12, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="http://davidgoss.co/" target="_blank" rel="noreferrer noopener">David Goss</a></p></div></header><div><span><p>Liquibase Linter <a href="https://github.com/whiteclarkegroup/liquibase-linter/releases/tag/0.5.0">0.5.0 is released</a> and available now <a href="https://search.maven.org/artifact/com.whiteclarkegroup/liquibase-linter/0.5.0/jar">in Maven Central</a>!</p>
+<p>This release has mostly been about making it easier to integrate the linter into an existing project.</p>
+<!--truncate-->
+<h2><a class="anchor" aria-hidden="true" id="config-options-to-support-retrofitting"></a><a href="#config-options-to-support-retrofitting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config options to support retrofitting</h2>
+<p>Using Liquibase Linter in a brand new project is pretty straightforward, but more often than not you'll be retrofitting it to an existing project with a history of changes. It's likely that many of those changes would not pass the set of rules you are applying, but since changes are supposed to be immutable, fixing them retrospectively is not really an option.</p>
+<p>The configuration file now supports an &quot;enable-after&quot; property that can be specified at the root level and/or on individual rules, which tells the linter to only check change logs after that one. Read more on the <a href="/liquibase-linter/docs/retrofitting">Retrofitting</a> page.</p>
+<p>There's also the new &quot;ignore-files-pattern&quot; option, which is regular expression that will cause linting to be skipped for change logs whose file path match against it. If you are able to segregate your historical changes into a separate directory/module when integrating Liquibase Linter, this might be a simpler way to exclude them from linting.</p>
+<h2><a class="anchor" aria-hidden="true" id="support-for-formatted-sql-change-logs"></a><a href="#support-for-formatted-sql-change-logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support for formatted SQL change logs</h2>
+<p>Whilst we already had support for XML, JSON and YAML formats, support for <a href="https://www.liquibase.org/documentation/sql_format.html">Formatted SQL format</a> was missing until now - not that we would recommend using formatted SQL changes...</p>
+<h2><a class="anchor" aria-hidden="true" id="technical-improvements"></a><a href="#technical-improvements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technical improvements</h2>
+<p>There have been some good changes under the hood as well:</p>
+<ul>
+<li>The integration tests have been refactored; it's now much easier to add a new test</li>
+<li>PMD is now running against the project for increased quality control</li>
+<li>The Travis build now runs against a range of Liquibase versions</li>
+<li>Several dependencies were brought up to date</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="next"></a><a href="#next" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next</h2>
+<p>We have a few key things lined up as we move towards a 1.0.0 release:</p>
+<ul>
+<li>Providing a &quot;recommended&quot; config that you can extend</li>
+<li>Reporting in JUnit format for CI tools</li>
+<li>Providing a JSON schema for the configuration file</li>
+<li>Improved documentation for running with tools other than Maven</li>
+</ul>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liquibase-linter/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#config-options-to-support-retrofitting">Config options to support retrofitting</a></li><li><a href="#support-for-formatted-sql-change-logs">Support for formatted SQL change logs</a></li><li><a href="#technical-improvements">Technical improvements</a></li><li><a href="#next">Next</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/liquibase-linter/docs/en/install">Setup</a><a href="/liquibase-linter/docs/en/rules/index">Rules</a></div><div><h5>Code</h5><a href="https://github.com/whiteclarkegroup/liquibase-linter">GitHub</a><a href=""><img alt="Travis Build" src="//travis-ci.org/whiteclarkegroup/liquibase-linter.svg?branch=master"/></a><a href=""><img alt="Codacy Quality" src="//api.codacy.com/project/badge/Grade/320a8a4be4fd44feb9d6102ccdc7e240"/></a></div><div><h5>More</h5><a href="/liquibase-linter/blog">Blog</a></div></section><a href="https://www.whiteclarkegroup.com/" target="_blank" rel="noopener" class="fbOpenSource"><img src="/liquibase-linter/img/wcg-logo.svg" alt="White Clarke Group"/></a><section class="copyright">Copyright © 2019 White Clarke Group</section></footer></div></body></html>

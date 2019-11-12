@@ -2,12 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://whiteclarkegroup.github.io/liquibase-linter/blog</id>
     <title>Liquibase Linter Blog</title>
-    <updated>2019-06-21T06:00:00Z</updated>
+    <updated>2019-11-12T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://whiteclarkegroup.github.io/liquibase-linter/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Liquibase Linter news and events.</subtitle>
     <logo>https://whiteclarkegroup.github.io/liquibase-linter/undefined</logo>
     <rights>Copyright © 2019 White Clarke Group</rights>
+    <entry>
+        <title type="html"><![CDATA[New Features in Liquibase Linter 0.5.0]]></title>
+        <id>https://whiteclarkegroup.github.io/liquibase-linter/blog/2019/11/12/new-features-in-050.html</id>
+        <link href="https://whiteclarkegroup.github.io/liquibase-linter/blog/2019/11/12/new-features-in-050.html">
+        </link>
+        <updated>2019-11-12T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>Liquibase Linter <a href="https://github.com/whiteclarkegroup/liquibase-linter/releases/tag/0.5.0">0.5.0 is released</a> and available now <a href="https://search.maven.org/artifact/com.whiteclarkegroup/liquibase-linter/0.5.0/jar">in Maven Central</a>!</p>
+<p>This release has mostly been about making it easier to integrate the linter into an existing project.</p>
+]]></summary>
+        <author>
+            <name>David Goss</name>
+            <uri>http://davidgoss.co/</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[New Features in Liquibase Linter 0.4.0]]></title>
         <id>https://whiteclarkegroup.github.io/liquibase-linter/blog/2019/06/21/new-features-in-040.html</id>
